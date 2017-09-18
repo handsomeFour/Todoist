@@ -10,4 +10,8 @@ import java.util.List;
 
 public interface TaskService {
     List<Task> findAll();
+    int addTask(Task task);
+    int delTask(int id);
+    Task findById(int id);
+    int update(Task task);
 }

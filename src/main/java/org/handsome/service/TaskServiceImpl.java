@@ -27,4 +27,29 @@ public class TaskServiceImpl extends BaseService implements TaskService {
         setMapper();
         return taskMapper.selectAll();
     }
+
+    @Override
+    public int addTask(Task task) {
+        setMapper();
+        return taskMapper.insert(task);
+    }
+
+    @Override
+    public int delTask(int id) {
+        setMapper();
+        return taskMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public Task findById(int id) {
+        setMapper();
+        Task task = taskMapper.selectByPrimaryKey(id);
+        return task;
+    }
+
+    @Override
+    public int update(Task task) {
+        setMapper();
+        return taskMapper.updateByPrimaryKey(task);
+    }
 }
